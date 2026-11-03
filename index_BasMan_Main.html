@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BasMan Technology Private Limited — Automation | AI | IT Services</title>
+<meta name="description" content="BasMan Technology Private Limited helps teams automate processes, build AI-assisted workflows, and deliver reliable IT services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#A01A25; --red-dark:#7E141D; --gray:#55555A; --gray-2:#66666B; --gray-3:#7A7A80;
+  --text:#1F1E1E; --muted:#55514F; --line:#ECE7E5; --soft:#F7F4F3; --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.6}
+a{color:var(--red)}a:hover{color:var(--red-dark)}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;color:var(--gray);margin:0}
+h2{font-size:clamp(30px,3.6vw,44px);line-height:1.1}
+section{scroll-margin-top:80px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dark);color:#fff}
+.btn-outline{background:#fff;color:var(--gray);border:1px solid #CFC8C5}.btn-outline:hover{border-color:var(--gray);color:var(--gray)}
+.btn-gray{background:var(--gray);color:#fff}.btn-gray:hover{background:#45454A}
+.btn-white{background:#fff;color:var(--red)}.btn-white:hover{background:#FBEFF0;color:var(--red-dark)}
+
+/* Logo */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:50px;height:50px;flex:none;border-radius:10px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:500;font-size:23px;letter-spacing:-.02em}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-family:'Outfit',sans-serif;font-weight:500;font-size:29px;letter-spacing:-.01em;color:var(--gray)}
+.logo-name span{color:var(--red)}
+.logo-tag{display:flex;align-items:center;gap:6px;margin-top:6px;font-family:'Outfit',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;color:var(--gray);white-space:nowrap}
+.logo-tag::before,.logo-tag::after{content:"";width:12px;height:1px;background:var(--gray)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1200px;margin:0 auto}
+nav.main{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+nav.main a{color:var(--gray);text-decoration:none}
+nav.main a:hover{color:var(--red)}
+nav.main a.btn{color:#fff;min-height:44px;padding:0 20px;font-size:15px}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;align-items:center;justify-content:center}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px 0;border-bottom:1px solid var(--line)}
+  nav.main a.btn{margin-top:12px;border:0}
+  .logo-name{font-size:24px}.logo-mark{width:44px;height:44px;font-size:20px}.logo-tag{font-size:8.5px}
+}
+
+/* Hero */
+.hero{display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:88px;padding-bottom:96px}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
+.hero h1 span{color:var(--red)}
+.hero p.lead{margin:0 0 36px;font-size:19px;color:var(--muted);max-width:560px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.stats{margin-top:56px;display:flex;flex-wrap:wrap;gap:40px;border-top:1px solid var(--line);padding-top:28px}
+.stat b{display:block;font-family:'Outfit',sans-serif;font-size:34px;font-weight:600;color:var(--gray);line-height:1.3}
+.stat span{font-size:14px;color:#5E5A58}
+.stack{flex:1 1 380px;min-width:0;background:var(--gray);border-radius:16px;padding:28px;color:#fff}
+.stack-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.stack-top div{display:flex;align-items:center;gap:12px;font-family:'Outfit',sans-serif;font-weight:500;font-size:17px}
+.stack-top i{font-style:normal;width:40px;height:40px;border-radius:9px;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:600}
+.stack-top small{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#ECECEE}
+.stack-row{background:var(--gray-2);border-radius:10px;padding:18px 20px;display:flex;gap:18px;align-items:center;margin-top:12px;font-size:15px}
+.stack-row b{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:14px;background:var(--red);border-radius:6px;padding:4px 10px;min-width:52px;text-align:center}
+
+/* About */
+.soft{background:var(--soft)}
+.pad{padding-top:96px;padding-bottom:96px}
+.about-head{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;margin-bottom:48px}
+.about-head > div{flex:1 1 360px}
+.about-head p{flex:1 1 420px;margin:0;font-size:18px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px}
+.card h3{margin:18px 0 8px;font-size:22px}
+.card p{margin:0;color:var(--muted)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));border-top:2px solid var(--gray);margin-top:48px}
+.service{padding:32px 28px 36px 0;border-bottom:1px solid var(--line)}
+.service .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--red);margin-bottom:16px}
+.service h3{font-size:26px;margin-bottom:12px}
+.service p{margin:0;color:var(--muted)}
+
+/* Demos */
+.dark{background:var(--gray);color:#fff}
+.dark h2{color:#fff}
+.dark .eyebrow{color:#FFD5D8}
+.demo-box{aspect-ratio:16/9;background:var(--gray-2);border:1px solid var(--gray-3);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.demo-box video{width:100%;height:100%;object-fit:cover;display:block}
+.play{width:60px;height:60px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center}
+.demo-title{margin-top:14px;font-family:'Outfit',sans-serif;font-size:18px;font-weight:500}
+
+/* Forms */
+.forms{display:flex;flex-wrap:wrap;gap:24px}
+.panel{flex:1 1 440px;min-width:0;border-radius:16px;padding:36px}
+.panel h2{font-size:32px;line-height:1.15;margin-bottom:8px}
+.panel-light{background:#fff;border:1px solid var(--line)}
+.panel-red{background:var(--red);color:#fff}
+.panel-red h2{color:#fff}.panel-red .eyebrow{color:#FFE3E5}
+.panel-red a{color:#fff}
+form{display:flex;flex-direction:column;gap:16px}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.panel-light label{color:var(--gray)}
+input,textarea{font:inherit;font-size:15px;border:1px solid #CFC8C5;border-radius:8px;padding:12px 14px;background:#fff;color:var(--text);width:100%}
+textarea{resize:vertical;min-height:110px}
+input:focus,textarea:focus{outline:2px solid var(--red);outline-offset:1px}
+.panel-red input:focus,.panel-red textarea:focus{outline-color:#fff}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.note{font-size:13px;margin:0}
+.panel-light .note{color:#5E5A58}
+.panel-red .note{color:#FFE3E5}
+.contact-links{margin:0 0 28px;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:15px}
+
+/* Footer */
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:36px;padding-bottom:36px}
+.foot nav{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;font-weight:500}
+.foot nav a{color:var(--gray)}
+.foot .copy{display:flex;flex-wrap:wrap;gap:20px;align-items:center;font-size:14px;color:#5E5A58}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#1F8F4E;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:30}
+.wa-float:hover{background:#18733E}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="head">
+    <a href="#top" class="logo" aria-label="BasMan Technology Private Limited, home">
+      <div class="logo-mark">BM</div>
+      <div class="logo-text">
+        <div class="logo-name">Bas<span>Man</span></div>
+        <div class="logo-tag">TECHNOLOGY PRIVATE LIMITED</div>
+      </div>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55555A" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#demos">Demos</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact" class="btn btn-red">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Automation &amp; digital transformation partner</p>
+    <h1>Build faster, smarter operations with <span>Automation + AI</span></h1>
+    <p class="lead">We help teams eliminate repetitive work, improve accuracy, and ship reliable systems — from RPA bots to AI-assisted workflows and enterprise IT services.</p>
+    <div class="actions">
+      <a href="#contact" class="btn btn-red">Start a Project</a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>70%+</b><span>Time saved on processes</span></div>
+      <div class="stat"><b>24/7</b><span>Bot-driven operations</span></div>
+      <div class="stat"><b>Secure</b><span>Enterprise-ready delivery</span></div>
+    </div>
+  </div>
+  <div class="stack">
+    <div class="stack-top"><div><i>BM</i>Delivery stack</div><small>END-TO-END</small></div>
+    <div class="stack-row"><b>RPA</b>UI automation, orchestration</div>
+    <div class="stack-row"><b>AI</b>Doc processing, assist, insights</div>
+    <div class="stack-row"><b>IT</b>Web apps, integrations, cloud</div>
+  </div>
+</section>
+
+<section id="about" class="soft">
+  <div class="wrap pad">
+    <div class="about-head">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Practical automation that scales your business</h2>
+      </div>
+      <p>BasMan Technology Private Limited delivers practical automation and AI solutions to help businesses scale. We focus on clean implementation, robust delivery, and measurable outcomes.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A01A25" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+        <h3>Speed</h3><p>Rapid prototyping and delivery with best-practice engineering.</p>
+      </div>
+      <div class="card">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A01A25" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+        <h3>Reliability</h3><p>Stable automations with observability, retries, and safe fallbacks.</p>
+      </div>
+      <div class="card">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A01A25" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Security</h3><p>Enterprise-ready approach with least-privilege and compliance awareness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap pad">
+    <p class="eyebrow">Services</p>
+    <h2>What we build for you</h2>
+    <div class="services">
+      <div class="service"><div class="num">01</div><h3>RPA Automation</h3><p>Workflow automation, UI bots, data extraction, orchestration and monitoring.</p></div>
+      <div class="service"><div class="num">02</div><h3>AI Solutions</h3><p>Document understanding, assistants, summarization, knowledge search, analytics.</p></div>
+      <div class="service"><div class="num">03</div><h3>IT Services</h3><p>Web development, integrations, cloud deployments, support and maintenance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="demos" class="dark">
+  <div class="wrap pad">
+    <p class="eyebrow">Demo videos</p>
+    <h2 style="margin-bottom:48px">See our automations in action</h2>
+    <div class="grid3">
+      <!-- To add a real video, replace the inner <div class="play">…</div> with:
+           <video src="assets/demo1.mp4" controls preload="metadata"></video> -->
+      <div><div class="demo-box"><div class="play"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div><div class="demo-title">Demo 1 — [Add video title]</div></div>
+      <div><div class="demo-box"><div class="play"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div><div class="demo-title">Demo 2 — [Add video title]</div></div>
+      <div><div class="demo-box"><div class="play"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div><div class="demo-title">Demo 3 — [Add video title]</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap pad forms">
+    <div id="careers" class="panel panel-light">
+      <p class="eyebrow">Careers</p>
+      <h2>Join the team</h2>
+      <p style="margin:0 0 28px;color:var(--muted)">Send your resume and profile details using the form below.</p>
+      <form id="careersForm">
+        <label>Full name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Role interested in<input type="text" name="role" required></label>
+        <label>Message<textarea name="message" rows="4" placeholder="Experience, skills, and a link to your resume or LinkedIn"></textarea></label>
+        <button type="submit" class="btn btn-gray" style="align-self:flex-start">Send Application</button>
+        <p class="note" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div id="contact" class="panel panel-red">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s automate your next process</h2>
+      <div class="contact-links">
+        <a href="mailto:basmantechnology@gmail.com">basmantechnology@gmail.com</a>
+        <a href="https://wa.me/96565861821" target="_blank" rel="noopener">WhatsApp: +965 6586 1821</a>
+      </div>
+      <form id="contactForm">
+        <div class="row2">
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Subject<input type="text" name="subject" required></label>
+        <label>Message<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn btn-white" style="align-self:flex-start">Send Message</button>
+        <p class="note" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="logo" aria-label="BasMan Technology Private Limited">
+      <div class="logo-mark" style="width:44px;height:44px;font-size:20px">BM</div>
+      <div class="logo-text">
+        <div class="logo-name" style="font-size:25px">Bas<span>Man</span></div>
+        <div class="logo-tag" style="font-size:9px">TECHNOLOGY PRIVATE LIMITED</div>
+      </div>
+    </a>
+    <nav aria-label="Social">
+      <a href="https://wa.me/96565861821" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">GitHub</a>
+    </nav>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> BasMan Technology Private Limited. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/96565861821" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+  // ===== SETTINGS =====
+  // 1) Every form message is emailed here (via FormSubmit — free)
+  var EMAIL_TO = 'basmantechnology@gmail.com';
+  // 2) You get a WhatsApp alert on this number for every message (via CallMeBot — free)
+  var WHATSAPP_NUMBER = '96565861821';
+  // Paste the API key CallMeBot sends you on WhatsApp between the quotes:
+  var CALLMEBOT_APIKEY = 'PASTE_YOUR_APIKEY_HERE';
+  // ====================
+
+  // Sends a WhatsApp alert to the owner's phone (the visitor sees nothing)
+  function notifyWhatsApp(text) {
+    if (!CALLMEBOT_APIKEY || CALLMEBOT_APIKEY.indexOf('PASTE') === 0) return;
+    var url = 'https://api.callmebot.com/whatsapp.php?phone=' + WHATSAPP_NUMBER +
+              '&text=' + encodeURIComponent(text) +
+              '&apikey=' + encodeURIComponent(CALLMEBOT_APIKEY);
+    // Fire-and-forget request (works from a static site without CORS issues)
+    var img = new Image();
+    img.src = url;
+  }
+
+  function sendEmail(data) {
+    return fetch('https://formsubmit.co/ajax/' + EMAIL_TO, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) { return r.json(); })
+      .then(function (res) {
+        return { ok: !!res && (res.success === true || res.success === 'true'), message: (res && res.message) || '' };
+      })
+      .catch(function () {
+        return { ok: false, message: location.protocol === 'file:'
+          ? 'Forms only work on the live website, not when the file is opened from your computer.'
+          : 'Network error — please check your connection.' };
+      });
+  }
+
+  function handleForm(formId, buildEmail, buildAlert) {
+    var f = document.getElementById(formId);
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('button[type="submit"]');
+      var note = f.querySelector('.note');
+      var d = {};
+      Array.prototype.forEach.call(f.elements, function (el) { if (el.name) d[el.name] = el.value.trim(); });
+
+      btn.disabled = true;
+      var label = btn.textContent;
+      btn.textContent = 'Sending…';
+      note.textContent = '';
+
+      sendEmail(buildEmail(d)).then(function (res) {
+        if (res.ok) {
+          notifyWhatsApp(buildAlert(d));
+          note.textContent = 'Thank you! Your message has been sent. We will get back to you soon.';
+          f.reset();
+        } else if (/activat/i.test(res.message)) {
+          // First-ever submission: FormSubmit emails the site owner an activation link
+          note.textContent = 'Setup needed: an activation email was sent to ' + EMAIL_TO + '. Click "Activate Form" in it (check Spam), then send again.';
+        } else {
+          note.textContent = 'Sorry, your message could not be sent (' + (res.message || 'unknown error') + '). Please email us at ' + EMAIL_TO + '.';
+        }
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+    });
+  }
+
+  handleForm('contactForm',
+    function (d) {
+      return { _subject: 'Website enquiry: ' + d.subject, _template: 'table', _replyto: d.email, _captcha: 'false',
+               Name: d.name, Email: d.email, Subject: d.subject, Message: d.message };
+    },
+    function (d) {
+      return 'New website enquiry (sent to your email)\nFrom: ' + d.name + ' (' + d.email + ')\nSubject: ' + d.subject + '\n\n' + d.message;
+    });
+
+  handleForm('careersForm',
+    function (d) {
+      return { _subject: 'Job application: ' + d.role + ' — ' + d.name, _template: 'table', _replyto: d.email, _captcha: 'false',
+               Name: d.name, Email: d.email, Role: d.role, Message: d.message };
+    },
+    function (d) {
+      return 'New job application (sent to your email)\nFrom: ' + d.name + ' (' + d.email + ')\nRole: ' + d.role + '\n\n' + d.message;
+    });
+
+  function toggleMenu(btn) {
+    var nav = document.getElementById('mainNav');
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  document.querySelectorAll('#mainNav a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('mainNav').classList.remove('open');
+      document.querySelector('.menu-btn').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
